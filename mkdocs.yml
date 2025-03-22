@@ -87,19 +87,58 @@ nav:
     - implementation/index.md
     - 整体架构: implementation/architecture.md
     - 启动与初始化: implementation/boot.md
-    - 宏内核单元设计: implementation/monolithic/architecture.md
+    - 宏内核单元设计: implementation/monolithic.md
 
   - 模块细节:
     - modules/index.md
+    - Starry Core模块: modules/core.md
     - 系统调用模块: modules/syscall.md
     - UserPtr 封装: modules/userptr.md
-    - 进程管理: modules/process.md
+    - 宏内核进程管理: modules/process.md
 
+  - ArceOS 模块细节:
+    - arceos-modules/index.md
+    - 运行时模块:
+      - arceos-modules/runtime/index.md
+    - 硬件抽象层模块:
+      - arceos-modules/hal/index.md
+      - 模块接口与用例: arceos-modules/network/api.md
+      - 自定义平台细节实现: arceos-modules/hal/customization.md
+    - 动态内存分配模块:
+      - arceos-modules/alloc/index.md
+      - 模块接口与用例: arceos-modules/alloc/api.md
+    - 驱动模块:
+      - arceos-modules/driver/index.md
+      - 驱动支持: arceos-modules/driver/support.md
+      - 驱动总线支持: arceos-modules/driver/bus.md
+    - 任务调度模块:
+      - arceos-modules/task/index.md
+      - 模块接口与用例: arceos-modules/task/api.md
+      - 调度机制实现: arceos-modules/task/schedule.md
+      - 多核调度支持: arceos-modules/task/multicore.md
+    - 网络模块:
+      - arceos-modules/network/index.md
+      - 模块接口与用例: arceos-modules/network/api.md
+      - 网络栈支持: arceos-modules/network/support.md
+    - 文件系统模块:
+      - arceos-modules/fs/index.md
+      - 模块接口与用例: arceos-modules/fs/api.md
+      - 文件系统兼容层: arceos-modules/fs/vfs.md
+    - 虚拟内存管理模块:
+      - arceos-modules/memory/index.md
+      - 模块接口与用例: arceos-modules/memory/api.md
+      - 内存管理机制: arceos-modules/memory/management.md
+    - 命名空间模块:
+      - arceos-modules/ns/index.md
+      - 模块接口与用例: arceos-modules/ns/api.md
+      - 命名空间机制: arceos-modules/ns/management.md
+    
   - 开发规划:
     - roadmap/index.md
 
   - 真实硬件平台开发:
     - hardware/index.md
+    - x86 PC支持: hardware/x86-pc.md
     - 星光二代支持: hardware/sifive.md
     - 飞腾派支持: hardware/phytium.md
     - 树莓派支持: hardware/raspberry.md
