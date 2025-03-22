@@ -30,7 +30,7 @@ gunzip sdcard-x86_64.img.gz
 
 ### 准备开发环境
 
-请参考 [**实验环境配置**](./ch02-01.md) 完成开发环境的配置。
+请参考 [**实验环境配置**](../setup/env.md) 完成开发环境的配置。
 
 
 
@@ -258,9 +258,9 @@ gzip sdcard-la.img
     因此我们提交的内容本就不包括`.cargo`文件夹，无需额外处理，只需要维护好`config.toml.temp`即可。
 
     !!! note
-        在[本地化依赖处理](#本地化依赖处理) 中要求将 vendor 信息加入到 `config.toml`，在 Starry 中应当是加入到 `./scripts/config.toml.temp`中，详见[config.toml.temp](https://gitlab.eduxiji.net/Azure_stars/starry-next/-/blob/main/scripts/config.toml.temp#L12)。
+        在[本地化依赖处理](#_8) 中要求将 vendor 信息加入到 `config.toml`，在 Starry 中应当是加入到 `./scripts/config.toml.temp`中，详见[config.toml.temp](https://gitlab.eduxiji.net/Azure_stars/starry-next/-/blob/main/scripts/config.toml.temp#L12)。
 
-- `.arceos`处理：Starry 并不是一个完整的内核，而是一个**内核插件**，需要在构建时拉取 arceos 仓库作为内核基座，完成整个系统的构建（关于两者的关系和运行原理详见[Starry概述](./ch02-00.md)）。由于我们默认评测机无法访问外部网络，且无法识别隐藏文件，因此需要做出如下适配。
+- `.arceos`处理：Starry 并不是一个完整的内核，而是一个**内核插件**，需要在构建时拉取 arceos 仓库作为内核基座，完成整个系统的构建。由于我们默认评测机无法访问外部网络，且无法识别隐藏文件，因此需要做出如下适配。
 
     1. 直接将 arceos 的相关代码拉取到项目文件夹中，作为项目的一部分进行提交，而不再是通过 `.scripts/get_deps.sh`进行拉取。相关代码详见[arceos](https://gitlab.eduxiji.net/Azure_stars/starry-next/-/tree/main/arceos)。
 
@@ -291,7 +291,7 @@ cp bin/* ${CARGO_BIN_PATH}
 
 为了适配评测环境，需要做出如下改动：
 
-1. cargo vendor 并添加 patch 信息到 `config.toml.temp`（注意不是`.cargo/config.toml`，相关原因见[隐藏目录](#隐藏目录处理))
+1. cargo vendor 并添加 patch 信息到 `config.toml.temp`（注意不是`.cargo/config.toml`，相关原因见[隐藏目录](#_9)
 2. 用环境变量`RUSTUP_TOOLCHAIN`显式指定评测所需的工具链
 3. 将 arceos 代码直接作为项目下文件夹一并提交，而不再是远程下载
 4. 修改 `AX_ROOT` 变量为 `arceos`

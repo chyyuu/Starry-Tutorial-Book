@@ -4,7 +4,7 @@
 
 ## 环境安装
 
-在[实验环境配置](ch02-01.md)中[安装 QEMU](ch02-01.md#安装qemu)的部分已经指出了安装 qemu 所需要的工具，请确保您在安装 qemu 的时候也安装了对应架构的 `linux-user`，例如 `riscv64-linux-user`。
+在[实验环境配置](../setup/env.md)中[安装 QEMU](../setup/env.md#qemu)的部分已经指出了安装 qemu 所需要的工具，请确保您在安装 qemu 的时候也安装了对应架构的 `linux-user`，例如 `riscv64-linux-user`。
 
 ## 使用方式
 

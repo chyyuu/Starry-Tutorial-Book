@@ -105,7 +105,7 @@ nav:
       - 宏内核扩展下的任务调度: implementation/task/monolithic.md
     - 网络模块:
       - implementation/network/index.md
-      - 模块接口: implementation/network/stack.md
+      - 模块接口: implementation/network/api.md
       - 网络栈支持: implementation/network/support.md
     - 文件系统模块:
       - implementation/fs/index.md
