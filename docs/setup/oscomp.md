@@ -111,7 +111,7 @@ gzip sdcard-la.img
 
 #### 评测流程
 
-![avatar](../static/usage/commit.png)
+![avatar](../static/setup/commit.png)
 当在比赛平台上提交了内核代码所在的仓库 URL 和分支（点击上图的**提交**按钮之后)，平台会执行如下流程开始进行评测：
 
 1. 拉取内核仓库的代码

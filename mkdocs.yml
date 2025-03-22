@@ -78,48 +78,31 @@ nav:
   - 快速上手:
     - setup/index.md
     - 环境配置: setup/env.md
-    - QEMU 支持: setup/qemu.md
-    - 星光二代支持: setup/sifive.md
-    - 飞腾派支持: setup/phytium.md
+    - 运行基本应用: setup/basic.md
+    - 运行 OS 比赛测例: setup/oscomp.md
+    - Starry 的自定义配置: setup/customization.md
+    - 更多复杂应用: setup/applications.md
 
-  - 使用手册:
-    - usage/index.md
-    - 运行基本应用: usage/basic.md
-    - 运行 OS 比赛测例: usage/oscomp.md
-    - 自定义配置: usage/customization.md
-    - 更多复杂应用: usage/applications.md
-
-  - 实现原理:
+  - 架构设计:
     - implementation/index.md
-    - 架构设计: implementation/architecture.md
+    - 整体架构: implementation/architecture.md
     - 启动与初始化: implementation/boot.md
-    - 驱动模块:
-      - implementation/driver/index.md
-      - 驱动支持: implementation/driver/support.md
-      - 驱动总线支持: implementation/driver/bus.md
-    - 任务调度模块:
-      - implementation/task/index.md
-      - 模块接口: implementation/task/api.md
-      - 调度机制实现: implementation/task/schedule.md
-      - 多核调度支持: implementation/task/multicore.md
-      - 宏内核扩展下的任务调度: implementation/task/monolithic.md
-    - 网络模块:
-      - implementation/network/index.md
-      - 模块接口: implementation/network/api.md
-      - 网络栈支持: implementation/network/support.md
-    - 文件系统模块:
-      - implementation/fs/index.md
-      - 模块接口: implementation/fs/api.md
-      - 文件系统兼容层: implementation/fs/vfs.md
-    - 宏内核扩展实现:
-      - implementation/monolithic/index.md
-      - 扩展实现思路: implementation/monolithic/plugin.md
-      - 扩展结构设计: implementation/monolithic/architecture.md
-      - Namespace 隔离下的代码复用: implementation/monolithic/namespace.md
-      - 资源扩展机制: implementation/monolithic/extension.md
-  
+    - 宏内核单元设计: implementation/monolithic/architecture.md
+
+  - 模块细节:
+    - modules/index.md
+    - 系统调用模块: modules/syscall.md
+    - UserPtr 封装: modules/userptr.md
+    - 进程管理: modules/process.md
+
   - 开发规划:
     - roadmap/index.md
+
+  - 真实硬件平台开发:
+    - hardware/index.md
+    - 星光二代支持: hardware/sifive.md
+    - 飞腾派支持: hardware/phytium.md
+    - 树莓派支持: hardware/raspberry.md
 
   - 附录:
     - appendix/index.md
