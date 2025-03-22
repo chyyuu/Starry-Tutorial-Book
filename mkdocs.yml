@@ -1,0 +1,131 @@
+# Basics
+site_name: Starry-Tutorial-Book
+repo_url: https://github.com/Azure-stars/Starry-Tutorial-Book
+repo_name: Starry-Tutorial-Book
+
+theme:
+  name: material
+  language: zh
+  custom_dir: theme/
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.indexes
+  palette:
+    - primary: white
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_javascript:
+  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      locale: zh
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  # - pymdownx.emoji:
+  #     emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+  - meta
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.progressbar
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+
+# Contents
+nav:
+  - 欢迎来到 Starry-Tutorial-Book:
+    - index.md
+    - Starry 支持情况: ./intro/support.md
+
+  - 快速上手:
+    - setup/index.md
+    - 环境配置: setup/env.md
+    - QEMU 支持: setup/qemu.md
+    - 星光二代支持: setup/sifive.md
+    - 飞腾派支持: setup/phytium.md
+
+  - 使用手册:
+    - usage/index.md
+    - 运行基本应用: usage/basic.md
+    - 运行 OS 比赛测例: usage/oscomp.md
+    - 自定义配置: usage/customization.md
+    - 更多复杂应用: usage/applications.md
+
+  - 实现原理:
+    - implementation/index.md
+    - 架构设计: implementation/architecture.md
+    - 启动与初始化: implementation/boot.md
+    - 驱动模块:
+      - implementation/driver/index.md
+      - 驱动支持: implementation/driver/support.md
+      - 驱动总线支持: implementation/driver/bus.md
+    - 任务调度模块:
+      - implementation/task/index.md
+      - 模块接口: implementation/task/api.md
+      - 调度机制实现: implementation/task/schedule.md
+      - 多核调度支持: implementation/task/multicore.md
+      - 宏内核扩展下的任务调度: implementation/task/monolithic.md
+    - 网络模块:
+      - implementation/network/index.md
+      - 模块接口: implementation/network/stack.md
+      - 网络栈支持: implementation/network/support.md
+    - 文件系统模块:
+      - implementation/fs/index.md
+      - 模块接口: implementation/fs/api.md
+      - 文件系统兼容层: implementation/fs/vfs.md
+    - 宏内核扩展实现:
+      - implementation/monolithic/index.md
+      - 扩展实现思路: implementation/monolithic/plugin.md
+      - 扩展结构设计: implementation/monolithic/architecture.md
+      - Namespace 隔离下的代码复用: implementation/monolithic/namespace.md
+      - 资源扩展机制: implementation/monolithic/extension.md
+  
+  - 开发规划:
+    - roadmap.md
+
+  - 附录:
+    - appendix/index.md
+    - qemu-user 运行调试: appendix/qemu-user.md
+
+  - 关于文档:
+    - notes/index.md
+    - 读者须知: notes/reader.md
+    - 编辑者须知: notes/editor.md
