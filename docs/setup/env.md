@@ -25,7 +25,7 @@ rustup install nightly
 再次确认一下我们安装了正确的 rustc 版本（以下为一个示例）：
 
 ```bash
-$ rustc --version
+rustc --version
 rustc 1.83.0 (90b35a623 2024-11-26)
 ```
 
@@ -45,8 +45,8 @@ sudo apt-get update \
 
 ```bash
 # 安装与qemu相关的软件包
-$ wget https://download.qemu.org/qemu-9.2.1.tar.xz
-$ tar xf qemu-9.2.1.tar.xz \
+wget https://download.qemu.org/qemu-9.2.1.tar.xz
+tar xf qemu-9.2.1.tar.xz \
     && cd qemu-9.2.1 \
     && ./configure --prefix=/qemu-bin-9.2.1 \
         --target-list=loongarch64-softmmu,riscv64-softmmu,aarch64-softmmu,x86_64-softmmu,loongarch64-linux-user,riscv64-linux-user,aarch64-linux-user,x86_64-linux-user \
@@ -55,9 +55,9 @@ $ tar xf qemu-9.2.1.tar.xz \
     && make install
 # 配置环境变量。。
 # 测试是否正确安装
-$ qemu-system-x86_64 --version
+qemu-system-x86_64 --version
 
-$ rm -rf qemu-9.2.1 qemu-9.2.1.tar.xz
+rm -rf qemu-9.2.1 qemu-9.2.1.tar.xz
 ```
 
 ## 安装 musl cross 工具链
@@ -127,47 +127,49 @@ ENV PATH="/x86_64-linux-musl-cross/bin:/aarch64-linux-musl-cross/bin:/riscv64-li
 请执行如下指令
 
 ```bash
-$ git clone git@github.com:oscomp/starry-next.git
-$ cd starry-next
+git clone git@github.com:oscomp/starry-next.git
+cd starry-next
 
-$ ./scripts/get_deps.sh
-$ cd .arceos
-$ docker build -t starry -f ./Dockerfile .
-$ cd ..
+./scripts/get_deps.sh
+cd .arceos
+docker build -t starry -f ./Dockerfile .
+cd ..
 
 # 在项目根目录下构建容器
-$ docker run -it -v $(pwd):/starry -w /starry starry bash
+docker run -it -v $(pwd):/starry -w /starry starry bash
 ```
 
-> 若 Docker pull 或 Docker build 出现超时等问题，可能是因为缺乏代理上网的配置。可以参考如下资料：
->
-> - Docker pull
->   - 使用代理：https://docs.docker.com/reference/cli/docker/image/pull/#proxy-configuration
->   - 换用可用国内源（自行查找）
-> - Docker build
->   - 使用代理：https://docs.docker.com/engine/cli/proxy/#build-with-a-proxy-configuration
-> - Docker run 也可以使用代理选项，相关操作与 build 类似，可以自行查阅资料
+!!! note
+    若 Docker pull 或 Docker build 出现超时等问题，可能是因为缺乏代理上网的配置。可以参考如下资料：
+    
+    ```markdown
+    Docker pull
+        1. 使用代理：https://docs.docker.com/reference/cli/docker/image/pull/#proxy-configuration
+        2. 换用可用国内源（自行查找）
+    Docker build: 使用代理 https://docs.docker.com/engine/cli/proxy/#build-with-a-proxy-configuration
+    Docker run: 也可以使用代理选项，相关操作与 build 类似，可以自行查阅资料
+    ```
 
 ## 进入项目目录
 
 ```bash
 # 若还未拉取 Starry Next 仓库
-$ git clone git@github.com:oscomp/starry-next.git
-$ cd starry-next
+git clone git@github.com:oscomp/starry-next.git
+cd starry-next
 
 # 拉取基座仓库 ArceOS
-$ ./scripts/get_deps.sh
+./scripts/get_deps.sh
 
 # 配置 Rust 环境
-$ cd .arceos
-$ rustup target add x86_64-unknown-linux-musl
-$ rustup target add aarch64-unknown-linux-musl
-$ rustup target add riscv64gc-unknown-linux-musl
-$ rustup target add x86_64-unknown-none  
-$ rustup target add riscv64gc-unknown-none-elf
-$ rustup target add aarch64-unknown-none
-$ rustup target add aarch64-unknown-none-softfloat
-$ rustup component add llvm-tools-preview
-$ cargo install cargo-binutils axconfig-gen
-$ cd ..
+cd .arceos
+rustup target add x86_64-unknown-linux-musl
+rustup target add aarch64-unknown-linux-musl
+rustup target add riscv64gc-unknown-linux-musl
+rustup target add x86_64-unknown-none  
+rustup target add riscv64gc-unknown-none-elf
+rustup target add aarch64-unknown-none
+rustup target add aarch64-unknown-none-softfloat
+rustup component add llvm-tools-preview
+cargo install cargo-binutils axconfig-gen
+cd ..
 ```

@@ -18,7 +18,7 @@
 
 目前我们接受反馈的方式为 GitHub Issue，为此，您需要注册一个 GitHub 账号。
 
-需要反馈时，点击页面右上方的“SAST skill docs”进入我们的 GitHub Repo，点击 Issue 栏目后点击右侧的 New issue 按钮，在输入框内输入您想要反馈的问题或者意见建议后，点击 Submit new issue 即可。
+需要反馈时，点击页面右上方的“Starry-Tutorial-Book”进入我们的 GitHub Repo，点击 Issue 栏目后点击右侧的 New issue 按钮，在输入框内输入您想要反馈的问题或者意见建议后，点击 Submit new issue 即可。
 
 - 如果您想要反馈功能问题，我们希望您能够在 Issue 中说明该问题的具体表现、如何复现这一功能问题以及该问题是否可以稳定出现。
 
