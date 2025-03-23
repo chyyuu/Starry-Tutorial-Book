@@ -130,8 +130,8 @@ nav:
       - 内存管理机制: arceos-modules/memory/management.md
     - 命名空间模块:
       - arceos-modules/ns/index.md
-      - 模块接口与用例: arceos-modules/ns/api.md
-      - 命名空间机制: arceos-modules/ns/management.md
+      - arceos-modules/ns/management.md
+      - arceos-modules/ns/api.md
     
   - 开发规划:
     - roadmap/index.md
