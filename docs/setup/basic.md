@@ -40,7 +40,7 @@ make ARCH={arch} LOG={log} AX_TESTCASE={app_name} BLK=y NET=y ACCEL=n run
 make ARCH={arch} AX_TESTCASE=libc BLK=y NET=y FEATURES=fp_simd ACCEL=n run
 ```
 
-如果只想编译**内核**而不运行，可以将上述的 `run`命令替换为 `build`，例如：
+如果只想编译**内核**而不运行，可以将上述的 `run` 命令替换为 `build`，例如：
 
 ```bash
 make ARCH={arch} LOG={log} AX_TESTCASE={app_name} BLK=y NET=y ACCEL=n build
@@ -48,7 +48,17 @@ make ARCH={arch} LOG={log} AX_TESTCASE={app_name} BLK=y NET=y ACCEL=n build
 
 ## 编写自己的应用
 
-上面我们已经介绍了基本应用的目录结构，如果希望添加自己的应用，需要在 `apps`目录下新建一个文件夹，文件夹名即为应用名。然后在该文件夹下新建 `Makefile`和 `testcase_list`文件，分别用于编译和测试用例列表。详细步骤指引如下：
+### 添加简单的c程序
+
+`libc`这个应用提供了编译单个源文件的c程序的功能，如果你想添加一个简单的c程序，可以直接在`apps/libc/c`目录下新建一个c文件，然后在`testcase_list`文件中添加该文件的名字即可。
+
+### 添加预编译的二进制程序
+
+`bin`这个应用提供了添加预编译的二进制程序的功能，如果你想添加一个预编译的二进制程序，可以直接在`apps/bin/{arch}`目录下添加你的二进制程序，然后在`testcase_list`文件中添加该文件的名字即可。
+
+### 完全自定义应用
+
+上面我们已经介绍了两种简单的添加测试用例的方法，如果你希望更进一步了解其中的原理，或者有添加复杂应用的需求，可以参考如下指引：
 
 1. 在 `apps`目录下新建一个文件夹，文件夹名即为应用名，例如 `myapp`:
 
